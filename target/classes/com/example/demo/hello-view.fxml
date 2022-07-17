@@ -1,0 +1,1526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="508.0" prefWidth="624.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+   <children>
+      <Label fx:id="label1" layoutX="117.0" layoutY="34.0" text="The  Final  Summoner" textFill="#edc300">
+         <font>
+            <Font name="Luminari" size="38.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="329.0" fitWidth="298.0" layoutX="173.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../summoningTree.jpeg" />
+         </image>
+      </ImageView>
+      <Button fx:id="newBut" layoutX="237.0" layoutY="424.0" mnemonicParsing="false" onAction="#newGame" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #f0c802#f0c802;" text="New Game">
+         <font>
+            <Font name="Luminari" size="17.0" />
+         </font>
+      </Button>
+      <AnchorPane fx:id="storyPane" layoutX="9.0" layoutY="8.0" prefHeight="492.0" prefWidth="606.0" style="-fx-background-color: #C4A484#C4A484;" visible="false">
+         <children>
+            <ImageView fitHeight="130.0" fitWidth="138.0" layoutX="83.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Avatars/girl2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="label11" layoutX="187.0" layoutY="39.0" text="Introduction">
+               <font>
+                  <Font name="Luminari" size="38.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="152.0" layoutX="244.0" layoutY="169.0" stroke="BLACK" strokeType="INSIDE" width="278.0" />
+            <Label fx:id="storyLine" alignment="TOP_LEFT" layoutX="257.0" layoutY="181.0" prefHeight="96.0" prefWidth="253.0" text="Nice to meet you summoner, I welcome you to the Kingdom of Alynthi. What is your name?" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Luminari" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="nextBut" layoutX="461.0" layoutY="286.0" mnemonicParsing="false" onAction="#nextPart" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" prefHeight="21.0" prefWidth="49.0" style="-fx-background-radius: 0; -fx-background-color: white;" text="NEXT">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Button>
+            <TextField fx:id="enterInfo" alignment="CENTER" layoutX="257.0" layoutY="286.0" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: white;" text="Siya">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainPane" layoutX="9.0" layoutY="9.0" prefHeight="492.0" prefWidth="606.0" style="-fx-background-color: #C4A484#C4A484 #C4A484#C4A484;" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="63.0" layoutX="7.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" width="590.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="71.0" layoutX="7.0" layoutY="413.0" stroke="BLACK" strokeType="INSIDE" width="590.0" />
+            <ImageView fitHeight="320.0" fitWidth="317.0" layoutX="145.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../fireEmblemIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="481.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../crownIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="26.0" layoutX="482.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../emerald.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="70.0" layoutY="420.0" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../homeIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="49.0" layoutX="340.0" layoutY="425.0" onMouseClicked="#setAlliesPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../alliesIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="200.0" layoutY="420.0" onMouseClicked="#setMapPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../battleIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="49.0" layoutX="470.0" layoutY="420.0" onMouseClicked="#setSummonPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../summonIcon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="numCrowns" layoutX="513.0" layoutY="39.0" prefHeight="26.0" prefWidth="79.0" text="Luminari" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="numGems" layoutX="513.0" layoutY="12.0" prefHeight="26.0" prefWidth="79.0" text="Luminari" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="nameLbl" layoutX="12.0" layoutY="14.0" prefHeight="26.0" prefWidth="79.0" text="Name" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="454.0" prefHeight="26.0" prefWidth="33.0" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="454.0" prefHeight="26.0" prefWidth="33.0" text="Battle" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="350.0" layoutY="454.0" prefHeight="26.0" prefWidth="30.0" text="Allies" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="470.0" layoutY="454.0" prefHeight="26.0" prefWidth="49.0" text="Summon" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="summonPane" layoutX="9.0" layoutY="9.0" prefHeight="492.0" prefWidth="606.0" style="-fx-background-color: #C4A484#C4A484 #C4A484#C4A484;" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="71.0" layoutX="7.0" layoutY="413.0" stroke="BLACK" strokeType="INSIDE" width="590.0" />
+            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="70.0" layoutY="420.0" onMouseClicked="#setMainPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../homeIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="49.0" layoutX="340.0" layoutY="425.0" onMouseClicked="#setAlliesPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../alliesIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="200.0" layoutY="420.0" onMouseClicked="#setMapPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../battleIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="49.0" layoutX="470.0" layoutY="420.0" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../summonIcon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="75.0" layoutY="454.0" prefHeight="26.0" prefWidth="33.0" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="454.0" prefHeight="26.0" prefWidth="33.0" text="Battle" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="350.0" layoutY="454.0" prefHeight="26.0" prefWidth="30.0" text="Allies" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="470.0" layoutY="454.0" prefHeight="26.0" prefWidth="49.0" text="Summon" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="331.0" fitWidth="344.0" layoutX="137.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../summoningCircle.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="summonBut" layoutX="228.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#summonHeroes" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" prefHeight="29.0" prefWidth="156.0" style="-fx-background-color: black;" text="Summon Heroes" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="15.0" />
+               </font>
+            </Button>
+            <Circle fx:id="circle1" fill="#006ccb" layoutX="305.0" layoutY="121.0" onMouseClicked="#circleClicked" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle2" fill="#006ccb" layoutX="404.0" layoutY="193.0" onMouseClicked="#circleClicked" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle3" fill="#006ccb" layoutX="372.0" layoutY="314.0" onMouseClicked="#circleClicked" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle4" fill="#006ccb" layoutX="245.0" layoutY="311.0" onMouseClicked="#circleClicked" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circle5" fill="#006ccb" layoutX="208.0" layoutY="195.0" onMouseClicked="#circleClicked" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="beforeLbl" layoutX="254.0" layoutY="380.0" prefHeight="26.0" prefWidth="39.0" text="###">
+               <font>
+                  <Font name="Luminari" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="393.0" layoutY="15.0" onMouseClicked="#summonHelp" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../questionIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="26.0" layoutX="226.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../emerald.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="26.0" layoutX="323.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../emerald.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="298.0" layoutY="387.0" prefHeight="14.0" prefWidth="16.0" text="➨" />
+            <Label fx:id="afterLbl" layoutX="353.0" layoutY="380.0" prefHeight="26.0" prefWidth="39.0" text="###">
+               <font>
+                  <Font name="Luminari" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="summonImg1" fitHeight="46.0" fitWidth="49.0" layoutX="281.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Avatars/boy1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="summonImg2" fitHeight="46.0" fitWidth="49.0" layoutX="378.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Avatars/boy1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="summonImg3" fitHeight="46.0" fitWidth="49.0" layoutX="348.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Avatars/boy1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="summonImg4" fitHeight="46.0" fitWidth="49.0" layoutX="221.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Avatars/boy1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="summonImg5" fitHeight="46.0" fitWidth="49.0" layoutX="184.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Avatars/boy1.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="explanationPane" layoutX="145.0" layoutY="66.0" prefHeight="308.0" prefWidth="322.0" style="-fx-background-color: black;" visible="false">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="86.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Avatars/girl2.png" />
+                     </image>
+                  </ImageView>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dfdfdf" height="93.0" layoutX="33.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="255.0" />
+                  <Label alignment="TOP_LEFT" layoutX="44.0" layoutY="210.0" prefHeight="76.0" prefWidth="234.0" text="Its me again, Frey! With the Divine Relic, you summon Heroes to be your allies. The color of the stone represents the hero type. Lastly, you can save gems by summoning more!" wrapText="true">
+                     <font>
+                        <Font name="Luminari" size="11.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="269.0" layoutY="12.0" onMouseClicked="#getOut" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../xBut.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="summonHeroPane" layoutX="145.0" layoutY="66.0" prefHeight="308.0" prefWidth="322.0" style="-fx-background-color: black;" visible="false">
+               <children>
+                  <ImageView fx:id="avatarImg" fitHeight="150.0" fitWidth="200.0" layoutX="86.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Avatars/boy2.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="heroNameLbl" alignment="CENTER" layoutX="94.0" layoutY="212.0" prefHeight="25.0" prefWidth="135.0" text="Name" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Luminari" size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="267.0" layoutY="12.0" onMouseClicked="#getOut" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../xBut.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="starImg" fitHeight="33.0" fitWidth="156.0" layoutX="94.0" layoutY="18.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../threeStar.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="weaponImg" fitHeight="40.0" fitWidth="40.0" layoutX="141.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../greenDagger.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="alliesPane" layoutX="9.0" layoutY="9.0" prefHeight="492.0" prefWidth="606.0" style="-fx-background-color: #C4A484#C4A484 #C4A484#C4A484;" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="77.0" layoutX="14.0" layoutY="59.0" stroke="BLACK" strokeType="INSIDE" width="416.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="71.0" layoutX="7.0" layoutY="413.0" stroke="BLACK" strokeType="INSIDE" width="590.0" />
+            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="70.0" layoutY="420.0" onMouseClicked="#setMainPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../homeIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="49.0" layoutX="340.0" layoutY="425.0" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../alliesIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="200.0" layoutY="420.0" onMouseClicked="#setMapPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../battleIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="49.0" layoutX="470.0" layoutY="420.0" onMouseClicked="#setSummonPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../summonIcon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="75.0" layoutY="454.0" prefHeight="26.0" prefWidth="33.0" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="454.0" prefHeight="26.0" prefWidth="33.0" text="Battle" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="350.0" layoutY="454.0" prefHeight="26.0" prefWidth="30.0" text="Allies" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="470.0" layoutY="454.0" prefHeight="26.0" prefWidth="49.0" text="Summon" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="146.0" prefHeight="249.0" prefWidth="416.0" vbarPolicy="ALWAYS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="623.0" prefWidth="400.0" style="-fx-background-color: black;">
+                     <children>
+                        <GridPane layoutX="1.0" layoutY="25.0" prefHeight="589.0" prefWidth="398.0" style="-fx-border-width: 1; -fx-border-color: gray; -fx-grid-lines-visible: true;">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <ImageView fx:id="img00" fitHeight="79.0" fitWidth="79.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img01" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img02" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img03" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img04" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img05" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img06" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img07" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img08" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img09" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img10" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img11" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="71.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <ImageView fitHeight="71.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <ImageView fitHeight="71.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" />
+                              <ImageView fitHeight="71.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <ImageView fx:id="img12" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img13" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img14" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img15" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img16" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img17" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img18" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img19" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img20" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img21" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img22" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img23" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img24" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img25" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img26" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img27" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img28" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img29" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img30" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img31" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img32" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img33" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img34" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img35" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img36" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img37" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img38" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="img39" fitHeight="79.0" fitWidth="80.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                                 <image>
+                                    <Image url="@../../../emptySlot.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="rate00" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate01" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate02" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate03" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate04" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate05" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate06" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate07" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate08" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate09" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate10" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate11" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate12" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate13" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate14" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate15" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate16" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate17" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate18" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate19" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate20" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate21" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate22" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate23" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate24" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate25" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate26" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate27" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate28" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate29" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate30" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate31" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate32" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate33" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate34" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate35" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate36" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate37" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate38" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="rate39" fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+                                 <image>
+                                    <Image url="@../../../fiveStar.png" />
+                                 </image>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fx:id="type00" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type01" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type02" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type03" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type04" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type05" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type06" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type07" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type08" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type09" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type10" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type11" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type12" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type13" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type14" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type15" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type16" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type17" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type18" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type19" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type20" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type21" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type22" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type23" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type24" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type25" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type26" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type27" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type28" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type29" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type30" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type31" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type32" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type33" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type34" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type35" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type36" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type37" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type38" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="7" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="type39" fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7" GridPane.valignment="TOP">
+                                 <image>
+                                    <Image url="@../../../greenDagger.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                        <Label fx:id="avCount" layoutX="8.0" layoutY="2.0" prefHeight="22.0" prefWidth="40.0" text="40/40" textFill="WHITE">
+                           <font>
+                              <Font name="Luminari" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <Label fx:id="troupeLbl" alignment="CENTER" layoutX="22.0" layoutY="65.0" prefHeight="22.0" prefWidth="86.0" text="TROUPE 1" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="13.0" />
+               </font>
+            </Label>
+            <GridPane gridLinesVisible="true" hgap="17.0" layoutX="115.0" layoutY="68.0" prefHeight="58.0" prefWidth="306.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fx:id="slot0" fitHeight="62.0" fitWidth="62.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../emptySlot.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="slot1" fitHeight="63.0" fitWidth="70.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@../../../emptySlot.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="slot2" fitHeight="64.0" fitWidth="72.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                     <image>
+                        <Image url="@../../../emptySlot.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="slot3" fitHeight="64.0" fitWidth="67.0" onMouseClicked="#exchangeIcons" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                     <image>
+                        <Image url="@../../../emptySlot.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </GridPane>
+            <Label fx:id="avCount11" layoutX="207.0" layoutY="8.0" prefHeight="41.0" prefWidth="191.0" text="EDIT TROUPE">
+               <font>
+                  <Font name="Luminari" size="25.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="337.0" layoutX="442.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="144.0" />
+            <ImageView fx:id="leftArrow" fitHeight="25.0" fitWidth="23.0" layoutX="39.0" layoutY="96.0" onMouseClicked="#changeTroupe" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../leftTriangle.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="rightArrow" fitHeight="25.0" fitWidth="30.0" layoutX="70.0" layoutY="96.0" onMouseClicked="#changeTroupe" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../rightTriangle.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="currentAv" fitHeight="86.0" fitWidth="86.0" layoutX="471.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../emptySlot.png" />
+               </image></ImageView>
+            <ImageView fx:id="currentRate" fitHeight="25.0" fitWidth="106.0" layoutX="461.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../fourStar.png" />
+               </image>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </ImageView>
+            <Label fx:id="currentName" alignment="CENTER" layoutX="471.0" layoutY="186.0" prefHeight="22.0" prefWidth="86.0" text="NAME" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="currentStats" alignment="TOP_LEFT" layoutX="454.0" layoutY="248.0" prefHeight="136.0" prefWidth="120.0" text=" LVL 20" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Luminari" size="13.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="currentType" fitHeight="26.0" fitWidth="30.0" layoutX="501.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../greenDagger.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="levelUpPane" layoutX="130.0" layoutY="170.0" prefHeight="150.0" prefWidth="322.0" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802 #f0c802#f0c802 #f0c802#f0c802; -fx-border-width: 5; -fx-border-color: black;" visible="false">
+               <children>
+                  <Label fx:id="cLvlLbl" layoutX="21.0" layoutY="21.0" text="Current Level: ">
+                     <font>
+                        <Font name="Luminari" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="61.0" text="Level Up:">
+                     <font>
+                        <Font name="Luminari" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="lvlUp" layoutX="100.0" layoutY="61.0" onKeyTyped="#updateCost" prefHeight="33.0" prefWidth="65.0" text="1" />
+                  <Label fx:id="costLbl" layoutX="21.0" layoutY="102.0" text="Cost:">
+                     <font>
+                        <Font name="Luminari" size="17.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="245.0" layoutY="94.0" mnemonicParsing="false" onAction="#purchaseLvl" style="-fx-background-color: BLACK;" text="BUY" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="15.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="256.0" layoutY="21.0" onMouseClicked="#getOut" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../x-button.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Button layoutX="528.0" layoutY="290.0" mnemonicParsing="false" onAction="#setLevelUpPane" prefHeight="52.0" prefWidth="46.0" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802;" text="LVL. UP" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Luminari" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mapPane" layoutX="9.0" layoutY="9.0" prefHeight="492.0" prefWidth="606.0" style="-fx-background-color: #C4A484#C4A484 #C4A484#C4A484;" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="71.0" layoutX="7.0" layoutY="413.0" stroke="BLACK" strokeType="INSIDE" width="590.0" />
+            <ImageView fitHeight="463.0" fitWidth="477.0" layoutX="71.0" layoutY="-33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../map.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="70.0" layoutY="420.0" onMouseClicked="#setMainPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../homeIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="49.0" layoutX="340.0" layoutY="425.0" onMouseClicked="#setAlliesPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../alliesIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="200.0" layoutY="420.0" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../battleIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="49.0" layoutX="470.0" layoutY="420.0" onMouseClicked="#setSummonPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../summonIcon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="75.0" layoutY="454.0" prefHeight="26.0" prefWidth="33.0" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="454.0" prefHeight="26.0" prefWidth="33.0" text="Battle" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="350.0" layoutY="454.0" prefHeight="26.0" prefWidth="30.0" text="Allies" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="470.0" layoutY="454.0" prefHeight="26.0" prefWidth="49.0" text="Summon" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" prefHeight="5.0" prefWidth="120.0" text="MAP">
+               <font>
+                  <Font name="Luminari" size="26.0" />
+               </font>
+            </Label>
+            <Button fx:id="battleBut1" layoutX="183.0" layoutY="212.0" mnemonicParsing="false" onAction="#setLevelPane" prefHeight="21.0" prefWidth="62.0" style="-fx-background-color: BLACK; -fx-background-radius: 100;" text="BATTLE" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="battleBut4" layoutX="403.0" layoutY="200.0" mnemonicParsing="false" onAction="#setLevelPane" prefHeight="21.0" prefWidth="62.0" style="-fx-background-color: BLACK; -fx-background-radius: 100;" text="BATTLE" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="battleBut3" layoutX="328.0" layoutY="64.0" mnemonicParsing="false" onAction="#setLevelPane" prefHeight="21.0" prefWidth="62.0" style="-fx-background-color: BLACK; -fx-background-radius: 100;" text="BATTLE" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="battleBut2" layoutX="222.0" layoutY="123.0" mnemonicParsing="false" onAction="#setLevelPane" prefHeight="21.0" prefWidth="62.0" style="-fx-background-color: BLACK; -fx-background-radius: 100;" text="BATTLE" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="levelPane" layoutX="145.0" layoutY="52.0" prefHeight="331.0" prefWidth="299.0" style="-fx-background-color: black;" visible="false">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="252.0" layoutY="13.0" onMouseClicked="#getOut" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../xBut.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="battleBut" disable="true" layoutX="178.0" layoutY="279.0" mnemonicParsing="false" onAction="#setBattlePane" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802;" text="BATTLE">
+                     <font>
+                        <Font name="Luminari" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="lvl1But" layoutX="38.0" layoutY="61.0" mnemonicParsing="false" onAction="#handleBattleBut" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802; -fx-background-radius: 100;" text="1">
+                     <font>
+                        <Font name="Luminari" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="lvl2But" layoutX="127.0" layoutY="61.0" mnemonicParsing="false" onAction="#handleBattleBut" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802; -fx-background-radius: 100;" text="2">
+                     <font>
+                        <Font name="Luminari" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="lvl3But" layoutX="214.0" layoutY="61.0" mnemonicParsing="false" onAction="#handleBattleBut" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802; -fx-background-radius: 100;" text="3">
+                     <font>
+                        <Font name="Luminari" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="lvl4But" layoutX="38.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleBattleBut" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802; -fx-background-radius: 100;" text="4">
+                     <font>
+                        <Font name="Luminari" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="lvl5But" layoutX="127.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleBattleBut" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802; -fx-background-radius: 100;" text="5">
+                     <font>
+                        <Font name="Luminari" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="lvl6But" layoutX="214.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleBattleBut" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802; -fx-background-radius: 100;" text="6">
+                     <font>
+                        <Font name="Luminari" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="lvl9But" layoutX="214.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBattleBut" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802; -fx-background-radius: 100;" text="9">
+                     <font>
+                        <Font name="Luminari" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="lvl8But" layoutX="127.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBattleBut" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802; -fx-background-radius: 100;" text="8">
+                     <font>
+                        <Font name="Luminari" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="lvl7But" layoutX="38.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBattleBut" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: #f0c802#f0c802 #f0c802#f0c802; -fx-background-radius: 100;" text="7">
+                     <font>
+                        <Font name="Luminari" size="19.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="110.0" layoutY="10.0" prefHeight="37.0" prefWidth="79.0" text="LEVEL" textFill="#f0c802">
+                     <font>
+                        <Font name="Luminari" size="22.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="type1Img" fitHeight="26.0" fitWidth="25.0" layoutX="38.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../redSword.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="type2Img" fitHeight="25.0" fitWidth="26.0" layoutX="70.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../redSword.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="type3Img" fitHeight="25.0" fitWidth="26.0" layoutX="102.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../redSword.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="type4Img" fitHeight="25.0" fitWidth="26.0" layoutX="134.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../redSword.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="battlePane" layoutX="9.0" layoutY="9.0" prefHeight="492.0" prefWidth="606.0" style="-fx-background-color: #C4A484#C4A484 #C4A484#C4A484;" visible="false">
+         <children>
+            <GridPane fx:id="battleGrid" layoutX="14.0" layoutY="17.0" prefHeight="459.0" prefWidth="357.0" style="-fx-grid-lines-visible: true;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="51.0" minWidth="51.0" prefWidth="51.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="51.0" minWidth="51.0" prefWidth="51.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="51.0" minWidth="51.0" prefWidth="51.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="51.0" minWidth="51.0" prefWidth="51.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="51.0" minWidth="51.0" prefWidth="51.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="51.0" minWidth="51.0" prefWidth="51.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="51.0" minWidth="51.0" prefWidth="51.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="51.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="51.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="51.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="51.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="51.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="51.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="51.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="51.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="51.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="93.0" layoutX="383.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="215.0" />
+            <AnchorPane fx:id="clickedPane" layoutX="383.0" layoutY="17.0" prefHeight="93.0" prefWidth="215.0" style="-fx-background-color: black;" visible="false">
+               <children>
+                  <ProgressBar fx:id="hpBar" layoutX="50.0" layoutY="69.0" prefHeight="16.0" prefWidth="156.0" progress="0.0" snapToPixel="false" />
+                  <Label layoutX="21.0" layoutY="65.0" prefHeight="21.0" prefWidth="26.0" text="HP:" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="attackLbl" layoutX="68.0" layoutY="26.0" prefHeight="21.0" prefWidth="62.0" text="ATK: 100" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="defenseLbl" layoutX="68.0" layoutY="43.0" prefHeight="21.0" prefWidth="62.0" text="DEF: 100" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="speedLbl" layoutX="135.0" layoutY="26.0" prefHeight="21.0" prefWidth="62.0" text="SPD: 100" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="resistanceLbl" layoutX="135.0" layoutY="43.0" prefHeight="21.0" prefWidth="62.0" text="RES: 100" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="avClicked" fitHeight="58.0" fitWidth="58.0" layoutX="4.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Avatars/boy18.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="avNameLbl" layoutX="135.0" layoutY="8.0" prefHeight="21.0" prefWidth="72.0" text="ARTEMIS" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="typeClicked" fitHeight="21.0" fitWidth="16.0" layoutX="114.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../redSword.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lvlLbl" layoutX="68.0" layoutY="8.0" prefHeight="21.0" prefWidth="46.0" text="LVL 20" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="12.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <Button fx:id="computerTurnBtn" alignment="CENTER" disable="true" layoutX="413.0" layoutY="123.0" mnemonicParsing="false" onAction="#computerMove" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" prefHeight="26.0" prefWidth="156.0" style="-fx-background-color: BLACK;" text="COMPUTER TURN" textFill="WHITE">
+               <font>
+                  <Font name="Luminari" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="386.0" layoutY="432.0" mnemonicParsing="false" onAction="#endTurn" prefHeight="44.0" prefWidth="54.0" style="-fx-background-color: BLACK;" text="END TURN " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="46.0" fitWidth="62.0" layoutX="545.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../weaponTri.png" />
+               </image>
+            </ImageView>
+            <ListView fx:id="eventList" layoutX="377.0" layoutY="169.0" prefHeight="83.0" prefWidth="221.0" />
+            <Button layoutX="455.0" layoutY="438.0" mnemonicParsing="false" onAction="#forfeit" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: BLACK;" text="FORFEIT" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Luminari" size="11.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="resPane" layoutX="120.0" layoutY="134.0" prefHeight="224.0" prefWidth="367.0" style="-fx-background-color: black;" visible="false">
+               <children>
+                  <Label fx:id="resLbl" layoutX="71.0" layoutY="17.0" text="YOU LOST" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="42.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="71.0" layoutY="90.0" text="REWARDS:" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="17.0" fitWidth="22.0" layoutX="163.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../emerald.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="gWonLbl" layoutX="189.0" layoutY="88.0" prefHeight="28.0" prefWidth="54.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="17.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="17.0" fitWidth="22.0" layoutX="161.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../crownIcon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="cWonLbl" layoutX="189.0" layoutY="112.0" prefHeight="28.0" prefWidth="49.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Luminari" size="17.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="109.0" layoutY="154.0" mnemonicParsing="false" onAction="#setMainPane" onMouseEntered="#shadeBut" onMouseExited="#unshadeBut" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #f0c802#f0c802;" text="MAIN SCREEN">
+                     <font>
+                        <Font name="Luminari" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
